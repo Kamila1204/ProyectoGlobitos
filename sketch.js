@@ -1,32 +1,18 @@
-const Engine = Matter.Engine;
-const World= Matter.World;
-const Bodies = Matter.Bodies;
-const Constraint = Matter.Constraint;
+var canvas, backgroundImage;
 
-var engine, world;
-var globo1, globo2, globo3, globo4, globo5, globo6;
-var arko;
-var arrow;
-var kuerda;
-var Canvas;
+var questions;
 
-function preload(){
-  bakgroundImg = loadImage("Imagenes/Fondo.jpg");
+var question, contestant, quiz;
+
+
+function setup(){
+  canvas = createCanvas(850,400);
+  database = firebase.database();
+  quiz = new Quiz();
+  quiz.start();
 }
 
-function setup() {
-  Canvas = createCanvas(800,800);
-  engine = Engine.create();
-  world = engine.world;
 
-  createSprite(400, 200, 50, 50);
-  globo1 = new Globos(400, 200, 30);
-
-}
-
-function draw() {
-  background(255,255,255);  
-  Engine.update(engine);
-  
-  globo1.display();
+function draw(){
+  background("pink");
 }
